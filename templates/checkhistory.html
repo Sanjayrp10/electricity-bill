@@ -1,0 +1,53 @@
+<html>
+
+<title>Check RR</title>
+
+
+
+ <head>
+ 
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/l1.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/l2.css' %}">
+<link rel="stylesheet" type="text/js" href="{% static 'js/r1.js' %}">
+<link rel="stylesheet" type="text/js" href="{% static 'js/r2.js' %}">
+<style>
+.profile-img{
+border-radius:10px;
+}
+</style>
+ </head>
+
+<center>
+
+<div class="bg">
+
+<body style="background-color: #BBB;">
+
+<br><br><br><br>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-md-4 col-md-offset-4">
+            <h1 class="text-center login-title" style="color:#HHH;font-size: 20px;">Continue to Check</h1>
+            <div class="account-wall">
+                <img class="profile-img" src="{% static 'img/hs.jpg' %}"
+                    alt="">
+                <form action="v4" method="post" class="form-signin">
+				{% csrf_token %}
+                <input type="text" name="rrno" class="form-control" placeholder="Enter R R No. Here.." required autofocus>
+									<br>
+                <button style="background-color:#HHH;" class="btn btn-lg btn-primary btn-block" type="submit">
+                    Continue</button>
+                 </div>
+			 </form>
+        </div>
+    </div>
+</div>
+</body>
+
+</div>
+
+</center>
+
+</html>  

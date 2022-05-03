@@ -1,0 +1,50 @@
+<html>
+<head>
+
+{% load static %} 
+<link rel="stylesheet" type="text/css" href="{% static 'css/f1.css' %}">
+
+</head>
+
+<body>
+
+
+{% block content %}  
+   
+        <div class="container">
+
+          <!--Simple Form-->
+          <h2>Add a new movie script</h2>
+		  <div class="file">
+		  <div class="ss">
+          <form  method="post" action="upload" enctype="multipart/form-data">
+            {% csrf_token %}
+		  </div>
+                <input type="file" name="upload" accept=".doc, .docx, .pdf, .txt">
+                <br>
+				<br>
+                <button type="submit" class="button"><span>Submit</span></button>
+			
+          </form>
+          </div>
+          <!--See File Uploaded-->
+          <h2>Movie Script</h2>
+          
+           {% if file_url %}
+            
+              <img src="{{ file_url }}">
+              <br>
+              <a href="customer">Return to Homepage</a>
+            {% else %}
+			<p>No movies posters added.</p>
+            {% endif %}
+
+        </div>
+    
+
+{% endblock %}
+    
+
+
+</body>
+</html>

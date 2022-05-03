@@ -1,0 +1,120 @@
+<html>
+<head>
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/cb1.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/cb2.css' %}">
+<link rel="stylesheet" type="text/js" href="{% static 'js/cb1.js' %}">
+<link rel="stylesheet" type="text/js" href="{% static 'js/cb2.js' %}">
+<link rel="stylesheet" type="text/js" href="{% static 'js/cb3.js' %}">
+
+</head>
+
+<body>
+
+<div id="invoice">
+
+    <div class="toolbar hidden-print">
+        <div class="text-right">
+            <button id="printInvoice" class="btn btn-info"><i class="fa fa-print"></i> Print</button>
+            <button class="btn btn-info"><i class="fa fa-file-pdf-o"></i> Export as PDF</button>
+        </div>
+        <hr>
+    </div>
+    <div class="invoice overflow-auto">
+        <div style="min-width: 600px">
+            <header>
+                <div class="row">
+                    <div class="col">
+                       
+                            <img src="{% static 'img/electricity.png' %}" data-holder-rendered="true" />
+                            
+                    </div>
+                    <div class="col company-details">
+                        <h2 class="name">
+                            
+                            Sanjay
+                            
+                        </h2>
+                        <div>455 Foggy Heights, AZ 85004, Banglore</div>
+                        <div>(123) 456-789</div>
+                        <div>electricpayless@gmail.com</div>
+                    </div>
+                </div>
+            </header>
+			
+            <main>
+                <div class="row contacts">
+                    <div class="col invoice-to">
+                        <div class="text-gray-light">INVOICE TO:</div>
+                        <h2 class="to">{{name}}</h2>
+                        <div class="address">{{rrno}}</div>
+                    </div>
+                    <div class="col invoice-details">
+                        <h1 class="invoice-id">INVOICE</h1>
+                        <div class="date">Due Date: 30/10/2021</div>
+                    </div>
+                </div>
+                <table border="0" cellspacing="0" cellpadding="0">
+                    <thead>
+                        <tr>
+                            <th>DATE</th>
+                            <th class="text-left">DESCRIPTION</th>
+                            <th class="text-right">HOUR PRICE</th>
+                            <th class="text-right">DAYS</th>
+                            <th class="text-right">TOTAL</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+					 {% for sts in res %}
+                        <tr>
+                            <td class="no">{{sts.2}}</td>
+                            <td class="text-left"><h3>
+                                
+                                home appliances bill
+                              
+                                </h3>
+                               
+                                   Useful electricity to improve your daily needs.stay tuned :)
+                            </td>
+                            <td class="unit">Rs.{{sts.3}}</td>
+                            <td class="qty">30</td>
+                            <td class="total">Rs.{{sts.4}}</td>
+                        </tr>
+						{% endfor %}
+                    <tfoot>
+                        <tr>
+                            <td colspan="2"></td>
+                            <td colspan="2">TAX 25%</td>
+                            <td>Rs.{{tax}}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"></td>
+                            <td colspan="2">GRAND TOTAL</td>
+                            <td>Rs.{{grand}}</td>
+                        </tr>
+						
+						<tr>
+							<td colspan="2"></td>
+							<td colspan="2">PAYMENT:</td>
+							<td><a href="paymentcheck"><button type="button" class="btn btn-lg btn-info" style="background-color:#3989c6;color: #fff;">Pay</button></a></td>
+                    </tfoot>
+                </table>
+                <div class="thanks">Thank you!</div>
+                <div class="notices">
+                    <div>NOTICE:</div>
+                    <div class="notice">A finance charge of 1.5% will be made on unpaid balances after 30 days.</div>
+                </div>
+            </main>
+            <footer>
+                Invoice was created on a computer and is valid without the signature and seal.
+            </footer>
+        </div>
+        <div></div>
+    </div>
+</div>
+
+</body>
+</html>
+
+ 

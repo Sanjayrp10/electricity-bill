@@ -1,0 +1,62 @@
+body{
+background: #5CDB95;
+font-size: 25px;
+padding: 50px 500px;
+}
+.container{
+	text-align: center;
+	background-color: #DDD;
+	border: 2px grey;
+	border-radius: 10px;
+	padding: 5px 20px 5px 20px;
+}
+.file{
+	background: #FFF;
+	text-align: center;
+	margin: auto;
+    width: 80%;
+    border: 3px solid green;
+    padding: 10px 10px 10px 10px;
+}
+.ss{
+	background: #DDD;
+	text-align: center;
+}
+
+
+.button{
+	 background-color: #4CAF50;
+	 border: none;
+	 color: white;
+	 padding: 15px 32px;
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     font-size: 16px;
+     margin: 4px 2px;
+     cursor: pointer;
+}
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
